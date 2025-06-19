@@ -6,22 +6,23 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 public class MemberRequestDTO {
 
-    @Getter
-    @Setter
+    @Getter @Setter
     public static class JoinDto {
-        @NotBlank
-        private String email;
+        @NotBlank private String email;
+        @NotBlank private String password;
+        @NotBlank private String name;
+        @NotNull private Role role;
+    }
 
-        @NotBlank
-        private String password;
-
-        @NotBlank
-        private String name;
-
-        @NotNull
-        private Role role;
+    @Getter @Setter
+    public static class LoginDto {
+        @NotBlank private String email;
+        @NotBlank private String password;
     }
 }
+
 

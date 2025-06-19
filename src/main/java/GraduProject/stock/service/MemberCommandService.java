@@ -12,11 +12,10 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class MemberCommandService {
-
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public void joinMember(MemberRequestDTO.JoinDto dto) {
+    public void join(MemberRequestDTO.JoinDto dto) {
         Member member = Member.builder()
                 .email(dto.getEmail())
                 .name(dto.getName())
@@ -26,3 +25,4 @@ public class MemberCommandService {
         memberRepository.save(member);
     }
 }
+
